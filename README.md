@@ -1,6 +1,8 @@
 # Thermostat challenge
 Makers afternoon challenge (week 5)
 
+Technologies used: Javascript, Jasmine
+
 ### Customer requirements
 
 * Thermostat starts at 20 degrees
