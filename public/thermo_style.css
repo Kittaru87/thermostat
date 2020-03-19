@@ -1,11 +1,120 @@
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .low-usage {
   color: green;
 }
 
 .medium-usage {
-  color: black;
+  color: white;
 }
 
 .high-usage {
   color: red;
+}
+
+.medium-bg-image {
+  background-image: url("medium.jpg");
+  -webkit-filter: blur(8px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.low-bg-image {
+  background-image: url("low-usage.jpg");
+  -webkit-filter: blur(8px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.high-bg-image {
+  background-image: url("high-usage.jpg");
+  -webkit-filter: blur(8px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-family: 'Baloo Thambi 2', cursive;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+
+}
+
+label {
+  padding: 0.3em 0.5em;
+  margin: 0.5em 0.5em;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3vw;
+}
+
+h3 {
+  font-size: 2vw;
+}
+
+button {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid #FFFFFF;
+ margin:0.3em 1.5em;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family: 'Baloo Thambi 2', cursive;
+ font-size: 20px;
+ font-weight:300;
+ color: black;
+ text-align:center;
+ transition: all 0.2s;
+}
+
+input[type=submit] {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  background-color: #ec5d0ade;
+  border: none;
+  border-color: white;
+  color: white;
+  padding: 16px 16px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 15px;
+  margin: 0.5em 1em;
+  cursor: pointer;
+}
+
+input[type=text] {
+width: 30%;
+height: 80px;
+padding: 5px 10px;
+margin: 8px 0;
+box-sizing: border-box;
+font-size: 20px;
 }
