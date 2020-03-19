@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="./public/thermo_style.css" />
     <title>Thermostat</title>
   </head>
   <body>
     <section>
       <h1 id="temperature"></h1>
       <p>
-        <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
+        <button id="temp-up">+</button>
+        <button id="temp-down">-</button>
+        <button id="temp-reset">reset</button>
+        power saving mode is <span id="power-saving">on</span>
+        <button id="psm-on">PSM on</button>
+        <button id="psm-off">PSM off</button>
       </p>
     </section>
-    <script src="js/thermostat.js"></script>
+    <script src="src/Thermostat.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+
+      $(document).ready(function() {
+        var thermostat = new Thermostat();
+        updateTemperature();
+    
+        $('#temp-down').click(function() {
+          thermostat.down();
+          updateTemperature();
+        });
+
+        $('#temp-up').click(function() {
+          thermostat.up();
+          updateTemperature();
+        });
+
+        $('#temp-reset').click(function() {
+          thermostat.resetTemperature();
+          updateTemperature();
+        });
+
+        $('#psm-on').click(function(){
+          thermostat.switchPowerSavingModeOn();
+          $('#power-saving').text('on')
+          updateTemperature();        
+        });
+
+        $('#psm-off').click(function(){
+          thermostat.switchPowerSavingModeOff();
+          $('#power-saving').text('off')
+          updateTemperature();
+        });
+
+        function updateTemperature(){
+          $('#temperature').text(thermostat.temperature);
+          $('#temperature').attr('class', thermostat.energyUsage());
+        };
+
+      });
+    </script>
   </body>
 </html>
