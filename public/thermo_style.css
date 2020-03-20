@@ -20,6 +20,7 @@ body, html {
 
 .medium-bg-image {
   background-image: url("medium.jpg");
+  filter: blur(6px);
   -webkit-filter: blur(6px);
   height: 100%;
   background-position: center;
@@ -29,6 +30,7 @@ body, html {
 
 .low-bg-image {
   background-image: url("low-usage.jpg");
+  filter: blur(6px);
   -webkit-filter: blur(6px);
   height: 100%;
   background-position: center;
@@ -38,6 +40,7 @@ body, html {
 
 .high-bg-image {
   background-image: url("high-usage.jpg");
+  filter: blur(6px);
   -webkit-filter: blur(6px);
   height: 100%;
   background-position: center;
